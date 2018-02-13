@@ -5,7 +5,7 @@ This tutorial uses HTML and CSS to create a full screen background image slider 
 ### Markup
 - Edit the `landing.ejs` page to look like the following:
 
-```
+```ejs
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,7 +48,7 @@ This tutorial uses HTML and CSS to create a full screen background image slider 
 - Create a new CSS file in `/public/stylesheets` named `landing.css`
 - Open `landing.css` and set the body's background-color to black
 
-```
+```css
 body {
   background-color: #000;
 }
@@ -56,7 +56,7 @@ body {
 
 - Now we need to position the welcome text and view all campgrounds buton:
  
-```
+```css
 #landing-header {
   z-index: 1;
   position: relative;
@@ -72,7 +72,7 @@ body {
 	
 - We also need to change the h1 text color to white: 
 
-```
+```css
 #landing-header h1 {
   color: #fff;
 }
@@ -81,7 +81,7 @@ body {
 - The unordered list and its list items that we added to `landing.ejs` need some styling to make them fit across the entire page
 - First we'll style the unordered list:
 
-```
+```css
 .slideshow { 
   position: fixed;
   width: 100%;
@@ -98,7 +98,7 @@ body {
 
 - Now we can style all of the list items:
 
-```
+```css
 .slideshow li { 
   width: 100%;
   height: 100%;
@@ -118,7 +118,7 @@ body {
 
 - Each list item needs a background-image and the last four need an animation-delay (this way they all fire off one after the other in ten second intervals):
 
-```
+```css
 .slideshow li:nth-child(1) { 
   background-image: url(http://i.imgur.com/K3mPv14.jpg) 
 }
@@ -142,7 +142,7 @@ body {
 
 - Now we can create the keyframes for the animation:
 
-```
+```css
 @keyframes imageAnimation { 
   0% { 
     opacity: 0; 
@@ -171,7 +171,7 @@ body {
 
 - Lastly, we need to add animation support for older browsers; we've already added the modernizr CDN to our landing page's head element, now we just need the following rule in our `landing.css`:
 
-```
+```css
 /* Older browser support - .no-cssanimations class added by modernizr */
 .no-cssanimations .slideshow li {
 	opacity: 1;
